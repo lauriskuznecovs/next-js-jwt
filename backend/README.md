@@ -32,19 +32,19 @@ module.exports = {
 };
 ```
 
-In case you dont have MongoDB installed locally, you can use docker image:
+In case you dont have MongoDB installed locally, you can use docker image
 
-- Pull image and run it for the first time
+Pull image and run it for the first time:
 ```
 docker run -it -p 27017-27019:27017-27019 --name mongodb mongo:4.0.4
 ```
 
-- Stop container
+Stop container:
 ```
 docker stop mongodb
 ```
 
-- Start container
+Start container:
 ```
 docker start mongodb
 ```
