@@ -1,4 +1,4 @@
-# JWT authentication with Express and Next.js
+# Next.js and Express JWT authentication
 
 ## Introduction
 
