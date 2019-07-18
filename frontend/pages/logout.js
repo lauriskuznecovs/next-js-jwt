@@ -13,7 +13,7 @@ export default class Logout extends Component {
     return (
       <div>
         <h1>You are logged out</h1>
-        <p>Go to home page</p>
+        <p>Go to main page to log in again or try secured page</p>
         <Navigation />
       </div>
     )
