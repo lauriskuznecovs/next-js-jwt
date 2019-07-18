@@ -8,8 +8,10 @@ const cookies = new Cookies()
 
 export const handleAuthSSR = async ctx => {
   const { token } = nextCookie(ctx)
+  const url = `${process.env.API_URL}/api/validate`
 
   const redirectOnError = () => {
+    /* eslint-disable no-console */
     console.log('Redirecting back to main page')
     if (typeof window !== 'undefined') {
       Router.push('/')
@@ -23,19 +25,23 @@ export const handleAuthSSR = async ctx => {
     if (!token) {
       return redirectOnError()
     }
-
-    const response = await axios.get(process.env.API_URL + '/api/validate', {
-      headers: { 'Authorization': token }
-    })
+    const response = await axios.get(
+      url,
+      {
+        headers: { 'Authorization': token },
+      }
+    )
 
     if (!response.data.user) {
       return redirectOnError()
     }
   } catch (error) {
+    /* eslint-disable no-console */
     console.log('Error: ', error)
     // Implementation or Network error
     return redirectOnError()
   }
+  return {}
 }
 
 export const login = async ({ token }) => {

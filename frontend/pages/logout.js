@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation'
 import { logout } from '../utils/auth'
 
 export default class Logout extends Component {
-  static async getInitialProps(ctx) {
+  static async getInitialProps() {
     await logout()
     return {}
   }

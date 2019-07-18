@@ -24,6 +24,7 @@ export default class Index extends Component {
   }
 
   onLoginClick = async e => {
+    /* eslint-disable no-console */
     e.preventDefault()
     try {
       const { email, password } = this.state
