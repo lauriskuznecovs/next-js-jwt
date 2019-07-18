@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Navigation from '../components/Navigation'
 import { handleAuthSSR } from '../utils/auth'
 
-export default class Secret extends Component {
+export default class Secured extends Component {
   static async getInitialProps(ctx) {
     // Must validate JWT
     // If the JWT is invalid it must redirect back to the main page.

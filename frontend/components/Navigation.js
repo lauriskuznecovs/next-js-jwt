@@ -11,8 +11,8 @@ export default () => (
         </Link>
       </li>
       <li>
-        <Link href="/secret">
-          <a>Secret page</a>
+        <Link href="/secured">
+          <a>Secured page</a>
         </Link>
       </li>
       <li>
