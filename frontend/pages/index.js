@@ -34,7 +34,10 @@ export default class Index extends Component {
       })
       const { token } = response.data
       await login({token})
-      this.setState({token})
+      this.setState({
+        token,
+        error: null,
+      })
     } catch (error) {
       console.error(
         'You have an error in your code or there are Network issues.',
@@ -48,31 +51,33 @@ export default class Index extends Component {
     return (
       <div>
         <h1>Main page</h1>
-        <form onSubmit={(e) => this.onLoginClick(e)}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            placeholder="demo@nkl.fi"
-            onChange={(e) => this.onInputChange(e)}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="text"
-            id="password"
-            name="password"
-            placeholder="demo"
-            onChange={(e) => this.onInputChange(e)}
-          />
-          <button type="submit">Login</button>
-          <p>
-            {this.state.error && `Error: ${this.state.error}`}
-          </p>
-        </form>
-        <p>
-          {this.state.token && `Token: ${this.state.token}`}
-        </p>
+        {!this.state.token &&
+          <form onSubmit={(e) => this.onLoginClick(e)}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="demo@nkl.fi"
+              onChange={(e) => this.onInputChange(e)}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+              type="text"
+              id="password"
+              name="password"
+              placeholder="demo"
+              onChange={(e) => this.onInputChange(e)}
+            />
+            <button type="submit">Login</button>
+            <p>
+              {this.state.error && `Error: ${this.state.error}`}
+            </p>
+          </form>
+        }
+        {this.state.token &&
+          <p>Token: {this.state.token}</p>
+        }
         <Navigation />
       </div>
     )
