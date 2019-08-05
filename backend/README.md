@@ -26,13 +26,13 @@ touch config.js
 
 # configuration should look like this:
 module.exports = {
-  db: [your db url],
-  port: [the port of the server],
-  secret: [secret word for JWT]
+  db: 'mongodb://localhost/your-db-name-here',
+  port: 'the port of the server',
+  secret: 'secret word for JWT'
 };
 ```
 
-In case you dont have MongoDB installed locally, you can use docker image
+In case you dont have MongoDB installed locally, you can use docker image.
 
 Pull image and run it for the first time:
 ```
@@ -49,8 +49,16 @@ Start container:
 docker start mongodb
 ```
 
+Configure MongoDB server:
 
-Run the server:
+- Create new database
+- Create collection called "users"
+
+Run App backend:
 ```
 npm start
 ```
+
+## Useful things
+
+If you are not familiar with MongoDB, I suggest to install "MongoDB Compass" to easily manage Mongo Database via GUI.
