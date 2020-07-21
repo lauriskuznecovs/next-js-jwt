@@ -1,12 +1,7 @@
 {
   "presets": [
     [
-      "next/babel",
-      {
-        "preset-env": {
-          "useBuiltIns": "usage"
-        }
-      }
+      "next/babel"
     ]
   ]
 }
