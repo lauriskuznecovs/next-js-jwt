@@ -59,7 +59,7 @@ export default class Index extends Component {
               type="text"
               id="email"
               name="email"
-              placeholder="demo@nkl.fi"
+              placeholder="user@domain.tld"
               onChange={(e) => this.onInputChange(e)}
             />
             <label htmlFor="password">Password</label>
@@ -67,7 +67,7 @@ export default class Index extends Component {
               type="text"
               id="password"
               name="password"
-              placeholder="demo"
+              placeholder="password"
               onChange={(e) => this.onInputChange(e)}
             />
             <button type="submit">Login</button>
