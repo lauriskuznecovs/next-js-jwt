@@ -27,7 +27,7 @@ touch config.js
 # configuration should look like this:
 module.exports = {
   db: 'mongodb://localhost/your-db-name-here',
-  port: 'the port of the server',
+  port: 3001,
   secret: 'secret word for JWT'
 };
 ```

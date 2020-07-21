@@ -2,6 +2,8 @@
 
 A simple JWT authentication for Next.js with the ability to authenticate existing users.
 
+This project uses cookies for storing JWT token, for best security practices use httpOnly cookies.
+
 ## Requirements
 - Node.js
 - NPM
