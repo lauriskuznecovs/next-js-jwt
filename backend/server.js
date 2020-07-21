@@ -9,7 +9,8 @@ const router = require('./router');
 const app = express();
 mongoose.connect(db, {
   useNewUrlParser: true,
-  useCreateIndex: true
+  useCreateIndex: true,
+  useUnifiedTopology: true,
 });
 
 app.use(morgan('combined'));
