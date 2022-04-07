@@ -1,6 +1,6 @@
 {
-  "parser": "babel-eslint",
-  "extends": ["airbnb", "prettier", "prettier/react"],
+  "parser": "@babel/eslint-parser",
+  "extends": ["airbnb/base", "prettier", "plugin:prettier/recommended"],
   "plugins": ["prettier", "react", "jsx-a11y"],
   "env": {
     "jest": true,
@@ -9,34 +9,37 @@
     "es6": true
   },
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 2020,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
-    }
+      "jsx": true,
+      "modules": true
+    },
+    "requireConfigFile": false
   },
   "rules": {
-    "arrow-body-style": [2, "as-needed"],
-    "class-methods-use-this": 0,
-    "comma-dangle": [2, "always-multiline"],
-    "import/imports-first": 0,
-    "import/newline-after-import": 0,
-    "import/no-dynamic-require": 0,
-    "import/no-extraneous-dependencies": 0,
-    "import/no-named-as-default": 0,
-    "import/no-unresolved": 2,
-    "no-underscore-dangle": 0,
-    "import/no-webpack-loader-syntax": 0,
-    "import/prefer-default-export": 0,
+    "arrow-body-style": ["error", "as-needed"],
+    "class-methods-use-this": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "import/imports-first": "off",
+    "import/newline-after-import": "off",
+    "import/no-dynamic-require": "off",
+    "import/no-extraneous-dependencies": "off",
+    "import/no-named-as-default": "off",
+    "import/no-unresolved": "error",
+    "import/no-cycle": "off",
+    "no-underscore-dangle": "off",
+    "import/no-webpack-loader-syntax": "off",
+    "import/prefer-default-export": "off",
     "jsx-a11y/anchor-is-valid": ["error", {
       "components": ["Link"],
       "specialLink": ["hrefLeft", "hrefRight"],
       "aspects": ["invalidHref", "preferButton"]
     }],
-    "jsx-a11y/aria-props": 2,
-    "jsx-a11y/heading-has-content": 0,
+    "jsx-a11y/aria-props": "error",
+    "jsx-a11y/heading-has-content": "off",
     "jsx-a11y/label-has-associated-control": [
-      2,
+      "error",
       {
         // NOTE: If this error triggers, either disable it or add
         // your custom components, labels and attributes via these options
@@ -44,31 +47,34 @@
         "controlComponents": ["Input"]
       }
     ],
-    "jsx-a11y/label-has-for": 0,
-    "jsx-a11y/html-has-lang": 0,
-    "jsx-a11y/mouse-events-have-key-events": 2,
-    "jsx-a11y/role-has-required-aria-props": 2,
-    "jsx-a11y/role-supports-aria-props": 2,
-    "max-len": 0,
-    "newline-per-chained-call": 0,
-    "no-confusing-arrow": 0,
-    "no-console": 1,
-    "no-unused-vars": 1,
-    "no-use-before-define": 0,
-    "no-nested-ternary": 0,
-    "prefer-template": 2,
-    "react/destructuring-assignment": 0,
-    "react/jsx-closing-tag-location": 0,
-    "react/forbid-prop-types": 0,
-    "react/jsx-first-prop-new-line": [2, "multiline"],
-    "react/jsx-filename-extension": 0,
-    "react/jsx-no-target-blank": 0,
-    "react/jsx-uses-vars": 2,
-    "react/require-default-props": 0,
-    "react/require-extension": 0,
-    "react/self-closing-comp": 0,
-    "react/sort-comp": 0,
-    "require-yield": 0,
-    "eol-last": 1
+    "jsx-a11y/label-has-for": "off",
+    "jsx-a11y/html-has-lang": "off",
+    "jsx-a11y/mouse-events-have-key-events": "error",
+    "jsx-a11y/role-has-required-aria-props": "error",
+    "jsx-a11y/role-supports-aria-props": "error",
+    "jsx-quotes": ["error", "prefer-double"],
+    "max-len": "off",
+    "newline-per-chained-call": "off",
+    "no-confusing-arrow": "off",
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "no-use-before-define": "off",
+    "no-nested-ternary": "off",
+    "prefer-template": "error",
+    "react/destructuring-assignment": "off",
+    "react/jsx-closing-tag-location": "off",
+    "react/forbid-prop-types": "off",
+    "react/jsx-first-prop-new-line": ["error", "multiline"],
+    "react/jsx-filename-extension": "off",
+    "react/jsx-no-target-blank": "off",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
+    "react/require-extension": "off",
+    "react/self-closing-comp": "off",
+    "react/sort-comp": "off",
+    "require-yield": "off",
+    "eol-last": "warn",
+    "semi": ["error", "never"]
   }
 }

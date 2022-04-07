@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 
 import Navigation from '../components/Navigation'
 import { handleAuthSSR } from '../utils/auth'

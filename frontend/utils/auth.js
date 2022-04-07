@@ -6,7 +6,7 @@ import nextCookie from 'next-cookies'
 // set up cookies
 const cookies = new Cookies()
 
-export const handleAuthSSR = async ctx => {
+export const handleAuthSSR = async (ctx) => {
   const { token } = nextCookie(ctx)
   const url = `${process.env.API_URL}/api/validate`
 
@@ -25,12 +25,9 @@ export const handleAuthSSR = async ctx => {
     if (!token) {
       return redirectOnError()
     }
-    const response = await axios.get(
-      url,
-      {
-        headers: { 'Authorization': token },
-      }
-    )
+    const response = await axios.get(url, {
+      headers: { Authorization: token },
+    })
 
     if (!response.data.user) {
       return redirectOnError()

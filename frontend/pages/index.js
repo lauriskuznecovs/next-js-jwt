@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { Cookies } from 'react-cookie'
 import axios from 'axios'
 
@@ -19,11 +19,11 @@ export default class Index extends Component {
     }
   }
 
-  onInputChange = e => {
+  onInputChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  onLoginClick = async e => {
+  onLoginClick = async (e) => {
     /* eslint-disable no-console */
     e.preventDefault()
     try {
@@ -34,7 +34,7 @@ export default class Index extends Component {
         password,
       })
       const { token } = response.data
-      await login({token})
+      await login({ token })
       this.setState({
         token,
         error: null,
@@ -42,7 +42,7 @@ export default class Index extends Component {
     } catch (error) {
       console.error(
         'You have an error in your code or there are Network issues.',
-        error
+        error,
       )
       this.setState({ error: error.message })
     }
@@ -52,7 +52,7 @@ export default class Index extends Component {
     return (
       <div>
         <h1>Main page</h1>
-        {!this.state.token &&
+        {!this.state.token && (
           <form onSubmit={(e) => this.onLoginClick(e)}>
             <label htmlFor="email">Email</label>
             <input
@@ -71,14 +71,10 @@ export default class Index extends Component {
               onChange={(e) => this.onInputChange(e)}
             />
             <button type="submit">Login</button>
-            <p>
-              {this.state.error && `Error: ${this.state.error}`}
-            </p>
+            <p>{this.state.error && `Error: ${this.state.error}`}</p>
           </form>
-        }
-        {this.state.token &&
-          <p>Token: {this.state.token}</p>
-        }
+        )}
+        {this.state.token && <p>Token: {this.state.token}</p>}
         <Navigation />
       </div>
     )
