@@ -23,7 +23,7 @@
   "homepage": "https://github.com/lauriskuznecovs/next-js-jwt#readme",
   "dependencies": {
     "axios": "^0.26.1",
-    "next": "^12.1.4",
+    "next": "^13.5.0",
     "next-cookies": "^2.0.3",
     "react": "^18.0.0",
     "react-cookie": "^4.1.1",
