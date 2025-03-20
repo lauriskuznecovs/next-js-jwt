@@ -26,7 +26,7 @@
     "next": "^12.1.4",
     "next-cookies": "^2.0.3",
     "react": "^18.0.0",
-    "react-cookie": "^4.1.1",
+    "react-cookie": "^8.0.1",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
